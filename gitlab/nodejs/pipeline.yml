@@ -1,0 +1,14 @@
+image: node:latest
+
+test:
+  script:
+  - npm ci
+  - npm run test
+  - npm run build
+  - npm run deploy
+
+artifacts:
+  reports:
+    coverage_report:
+      coverage_format: cobertura
+      path: coverage/cobertura-coverage.xml
